@@ -5,7 +5,6 @@ class Solution:
         ans = [-1] * len(prices)
 
         for idx, p in enumerate(prices):
-
             while q and q[-1][1] >= p:
                 t_idx, t_val = q.pop()
                 ans[t_idx] = t_val - p
@@ -13,11 +12,6 @@ class Solution:
 
             q.append((idx, p))
     
-        #last element
-        if q:
-            t_idx, t_val = q.pop()
-            ans[t_idx] = t_val
-        
         for i in range(len(prices)):
             if ans[i] == -1:
                 ans[i] = prices[i]
